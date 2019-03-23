@@ -6,8 +6,7 @@ const int valvula = 7;
 const int trigger = 9;
 const int echo = 10;
 int distancia = 2;
-float pulse_start = 0;
-float pulse_end = 0;
+
 
 /*# Banda
 # Sensor
@@ -20,7 +19,7 @@ float pulse_end = 0;
 void setup() {
 
   Serial.begin(9600);
-  
+
   // Pines del sistema
   // Banda
   pinMode(banda, OUTPUT);
@@ -34,13 +33,13 @@ void setup() {
   pinMode(echo, INPUT);
 
   //Ejecuciones Iniciales del sistema
- 
+
   // paramos la banda y la valvula enviando un activo bajo
   digitalWrite(banda, LOW);
   digitalWrite(valvula, LOW);
 
-  
-  
+
+
 }
 
 int sonar(){
@@ -75,7 +74,7 @@ void llenar(){
 
 
 
- 
+
 
 void loop() {
 
@@ -94,5 +93,5 @@ distancia = sonar();
     digitalWrite(banda, HIGH);
     delay(8000);
   }
-  
+
 }
